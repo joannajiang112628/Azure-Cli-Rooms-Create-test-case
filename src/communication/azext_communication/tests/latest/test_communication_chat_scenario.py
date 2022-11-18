@@ -4,10 +4,13 @@
 # license information.
 # --------------------------------------------------------------------------
 
-from azure.cli.testsdk import ScenarioTest, ResourceGroupPreparer
 import os
-from .recording_processors import URIIdentityReplacer, BodyReplacerProcessor
+
+from azure.cli.testsdk import ResourceGroupPreparer, ScenarioTest
+
 from .preparers import CommunicationResourcePreparer
+from .recording_processors import BodyReplacerProcessor, URIIdentityReplacer
+
 
 class CommunicationChatScenarios(ScenarioTest):
 
