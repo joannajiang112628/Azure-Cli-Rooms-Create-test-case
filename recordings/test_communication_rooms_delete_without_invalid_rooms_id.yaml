@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      Repeatability-First-Sent:
+      - '2022-11-20T22:06:31.077909Z'
+      Repeatability-Request-ID:
+      - 96a6c669-691f-11ed-8f12-6ca100547643
+      User-Agent:
+      - azsdk-python-communication-rooms/1.0.0b2 Python/3.10.8 (Windows-10-10.0.22621-SP0)
+      x-ms-content-sha256:
+      - RBNvo1WzZ4oRRq0W9+hknpT7T8If536DEMBg9hyq/4o=
+      x-ms-date:
+      - Sun, 20 Nov 2022 22:06:31 GMT
+      x-ms-return-client-request-id:
+      - 'true'
+    method: POST
+    uri: https://clitestj.communication.azure.com/rooms?api-version=2022-02-01
+  response:
+    body:
+      string: '{"id":"99418734172110782","createdDateTime":"2022-11-20T22:06:31.3728032+00:00","validFrom":"2022-11-20T22:06:31.3068522+00:00","validUntil":"2023-05-19T22:06:31.3068522+00:00","roomJoinPolicy":"InviteOnly","participants":[]}'
+    headers:
+      api-supported-versions:
+      - 2021-04-07, 2022-02-01
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Sun, 20 Nov 2022 22:06:31 GMT
+      location:
+      - '99418734172110782'
+      ms-cv:
+      - xjZDgth/A0mP40sMysQW1w.0
+      repeatability-result:
+      - accepted
+      transfer-encoding:
+      - chunked
+      x-azure-ref:
+      - 05qR6YwAAAAAtZ05RDHaRR4SUuyJuMuwLWVZSMzExMDAwMTE2MDI1ADlmYzdiNTE5LWE4Y2MtNGY4OS05MzVlLWM5MTQ4YWUwOWU4MQ==
+      x-cache:
+      - CONFIG_NOCACHE
+    status:
+      code: 201
+      message: Created
+version: 1

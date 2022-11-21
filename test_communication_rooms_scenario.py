@@ -12,7 +12,7 @@ from .recording_processors import BodyReplacerProcessor, URIIdentityReplacer
 
 class CommunicationRoomsScenarios(ScenarioTest):
 
-    def __create_rooms(self, communication_resource_info):
+    def __rooms_create(self, communication_resource_info):
         connection_str = communication_resource_info[1]
         if self.is_live or self.in_recording:
             self.kwargs.update({ 'connection_string': connection_str})
@@ -25,15 +25,9 @@ class CommunicationRoomsScenarios(ScenarioTest):
     def __get_connectionString_from_resource_info(self, communication_resource_info):
         return communication_resource_info[2]
        
-    def __CommunicationRoomsScenarios_update_environ(self, communication_resource_info):
-        communicationString = self.__get_connectionString_from_resource_info(communication_resource_info)
-        os.environ['AZURE_COMMUNICATION_STRING'] = communicationString
-
-
     @ResourceGroupPreparer(name_prefix='clitestcommunication_MyResourceGroup'[:7], key='rg', parameter_name ='rg')
     @CommunicationResourcePreparer(resource_group_parameter_name='rg')
     def test_communication_rooms_create(self, communication_resource_info):
-        self.__CommunicationRoomsScenarios_update_environ(communication_resource_info)
         
         room = self.cmd('az communication rooms create').get_output_in_json()
         
@@ -57,4 +51,4 @@ class CommunicationRoomsScenarios(ScenarioTest):
             self.cmd('az communication rooms create --join-policy {join_policy}', checks = [
                 self.check('CommunicationError.code', 'Bad Request')])
         
-       
+    
